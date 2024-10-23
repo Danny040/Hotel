@@ -7,7 +7,7 @@ module.exports = async function(req, res) {
     var email = req.body.email;
     var password = req.body.password;
 
-    var hashPassword = await bcrypt(password, 10);
+    var hashPassword = await bcrypt.hash(password, 10);
 
     var newUser = {
         firstName: firstName,
