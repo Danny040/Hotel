@@ -1,7 +1,20 @@
 import express from "express";
+import cors from "cors";
+
 import initializeConnection from "./dbConnection.js";
+import register from "./src/register";
 
 const app = express();
+const corsOptions = {
+    origin: 'http://localhost:3000',
+    optionsSuccessStatus: 200
+};
+app.use(cors(corsOptions));
+app.use(express.json());
+
+app.post('/register', (req, res) => {
+    register(req, res);
+});
 
 initializeConnection()
   .then((connection) => {
