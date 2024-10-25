@@ -1,8 +1,10 @@
-const express = require('express');
-const cors = require('cors');
+import express from "express";
+import cors from "cors";
+
+import initializeConnection from "./dbConnection.js";
+import register from "./src/register";
+
 const app = express();
-
-
 const corsOptions = {
     origin: 'http://localhost:3000',
     optionsSuccessStatus: 200
@@ -10,10 +12,17 @@ const corsOptions = {
 app.use(cors(corsOptions));
 app.use(express.json());
 
-var register = require('./src/register');
 app.post('/register', (req, res) => {
     register(req, res);
 });
 
-
-app.listen(4000, () => console.log("Server is listening at port 4000"));
+initializeConnection()
+  .then((connection) => {
+    const port = process.env.PORT || 3000;
+    app.listen(port, () => {
+      console.log(`server is running on port: ${port}`);
+    });
+  })
+  .catch((error) => {
+    console.log("Error initialize connection error: ", error);
+  });
