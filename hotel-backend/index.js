@@ -2,7 +2,7 @@ import express from "express";
 import cors from "cors";
 
 import initializeConnection from "./dbConnection.js";
-import register from "./src/register";
+import register from "./src/register.js";
 
 const app = express();
 const corsOptions = {

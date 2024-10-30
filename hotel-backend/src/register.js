@@ -1,6 +1,6 @@
-const bcrypt = require('bcrypt');
+import bcrypt from "bcrypt";
 
-module.exports = async function(req, res) {
+const register = async (req, res) => {
     var firstName = req.body.firstName;
     var lastName = req.body.lastName;
     var fullName = firstName + " " + lastName;
@@ -17,4 +17,6 @@ module.exports = async function(req, res) {
         password: hashPassword
     };
     res.json(newUser);
-}
+};
+
+export default register;
