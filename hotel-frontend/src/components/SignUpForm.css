@@ -1,0 +1,21 @@
+.input-field{
+    text-align: left;
+}
+.input-field input{
+    border-color: #DAD2BC;
+    border-radius: 10px;
+    width: 300px;
+    height: 40px;
+    font-size: 16px;
+}
+.input-field label{
+    
+    font-size: 20px;
+}
+.signup-container{
+    text-align: center;
+}
+
+.sign-buttons{
+    text-align: center;
+}
