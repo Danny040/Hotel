@@ -1,5 +1,5 @@
 # Hotel
-Hotel room reservation application.
+Hotel room reservation application. Migrated to GitLab.
 
 Minimum requirements:
 The objective is to develop a hotel room reservation application. 
